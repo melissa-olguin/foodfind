@@ -95,6 +95,7 @@ const App = () => {
 
   const updateSearch = e => {
     setSearch(e.target.value);
+    console.log(search);
   };
 
   const getSearch = e => {
@@ -117,7 +118,7 @@ const App = () => {
         <h1 className="title">
           <FaDrumstickBite />
           <FaSearchengin />
-          Food Find
+          FoodFind
         </h1>
         <form onSubmit={getSearch} className="search-form">
           <SearchBox updateSearch={updateSearch} placeholder="Find recipes" />
@@ -131,7 +132,7 @@ const App = () => {
           <Recipe
             key={index}
             title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
+            
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
