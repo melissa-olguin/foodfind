@@ -67,6 +67,7 @@ import { SearchFilter } from "./components/search-filter/search-filter";
 import "./Main.css";
 import "./FoodFind.png";
 import "./ffLogo.png";
+import { Helmet } from "react-helmet";
 import { FaDrumstickBite, FaSearchengin } from "react-icons/fa";
 
 const App = () => {
@@ -114,8 +115,13 @@ const App = () => {
   };
   return (
     <div className="App">
+
       <header className="header">
-        <h1 className="title">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>FoodFind</title>
+        </Helmet>
+        <h1 className="logo">
           <FaDrumstickBite />
           <FaSearchengin />
           FoodFind
@@ -132,7 +138,7 @@ const App = () => {
           <Recipe
             key={index}
             title={recipe.recipe.label}
-            
+
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
